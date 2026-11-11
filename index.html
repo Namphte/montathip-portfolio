@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio | มลฑาทิพย์ เชื้อพุทธ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --purple: #a78bfa;
+  --light: #f5efff;
+  --pink: #fce7f3;
+  --dark: #553879;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background: #fcfaff;
+  color: #554467;
+}
+
+header {
+  background: rgba(255,255,255,0.95);
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 15px #ddd0ed;
+}
+
+.logo {
+  color: #9064c7;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #76548e;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #c084fc;
+}
+
+.hero {
+  min-height: 580px;
+  background: linear-gradient(135deg,#eadcff,#fce7f3,#f5efff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.profile {
+  max-width: 700px;
+}
+
+.profile img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid white;
+  box-shadow: 0 5px 25px #b89bd8;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #70469b;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #795b91;
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-block;
+  background: #a78bfa;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #8055ba;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 75px 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 29px;
+  color: #865bb1;
+  margin-bottom: 35px;
+}
+
+.about {
+  text-align: center;
+  line-height: 2;
+  max-width: 750px;
+  margin: auto;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px #e9dcf4;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card h3 {
+  color: #9064c7;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.skills {
+  background: #f5efff;
+}
+
+.skill {
+  background: white;
+  padding: 17px;
+  border-radius: 15px;
+  text-align: center;
+  color: #8259a9;
+}
+
+.projects img,
+.certificate img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.projects img {
+  height: 150px;
+}
+
+.certificate img {
+  height: 180px;
+}
+
+.contact {
+  background: linear-gradient(135deg,#eadcff,#fce7f3);
+  text-align: center;
+  line-height: 2.2;
+}
+
+.contact a {
+  color: #76509e;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #70469b;
+  color: white;
+  font-size: 13px;
+}
+
+@media(max-width:650px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px 5%;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">💜 MY PORTFOLIO</div>
+  <nav>
+    <a href="#home">หน้าหลัก</a>
+    <a href="#about">เกี่ยวกับฉัน</a>
+    <a href="#education">การศึกษา</a>
+    <a href="#skills">ทักษะ</a>
+    <a href="#projects">ผลงาน</a>
+    <a href="#contact">ติดต่อ</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+  <div class="profile">
+    <!-- เปลี่ยน profile.jpg เป็นรูปของตัวเอง -->
+    <img src="profile.jpg" alt="รูปโปรไฟล์">
+    <h1>น.ส.มลฑาทิพย์ เชื้อพุทธ</h1>
+    <p>WELCOME TO MY PORTFOLIO 🌷</p>
+    <p>แฟ้มสะสมผลงานนักเรียน</p>
+    <p>Learning today, creating tomorrow.</p>
+    <a href="#about" class="btn">รู้จักฉันเพิ่มเติม</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">🌷 ABOUT ME</h2>
+  <div class="about">
+    <p>
+      สวัสดีค่ะ ฉันชื่อ มลฑาทิพย์ เชื้อพุทธ
+      เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมประวัติส่วนตัว
+      ประวัติการศึกษา ผลงาน กิจกรรม และความสามารถ
+      เพื่อแสดงถึงความตั้งใจในการเรียนรู้และพัฒนาตนเอง
+      พร้อมเปิดรับประสบการณ์ใหม่ ๆ อยู่เสมอ
+    </p>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="background:#f9f5ff;">
+  <h2 class="section-title">🎓 EDUCATION</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>🏫 สถานศึกษา</h3>
+      <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+      <br>
+      <p>ระดับมัธยมศึกษาตอนปลาย</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills">
+  <h2 class="section-title">✨ MY SKILLS</h2>
+  <div class="card-container">
+    <div class="skill">💻 เทคโนโลยี</div>
+    <div class="skill">🎨 ความคิดสร้างสรรค์</div>
+    <div class="skill">🤝 การทำงานเป็นทีม</div>
+    <div class="skill">📚 การเรียนรู้สิ่งใหม่</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">📁 MY PROJECTS</h2>
+  <div class="card-container">
+    <div class="card projects">
+      <img src="project1.jpg" alt="ผลงานที่ 1">
+      <h3>ผลงานที่ 1</h3>
+      <p>เพิ่มรายละเอียดผลงานของฉันที่นี่</p> หัวหน้าฝ่ายศิปล์
+    </div> 
+
+    <div class="card projects">
+      <img src="project2.jpg" alt="ผลงานที่ 2">
+      <h3>ผลงานที่ 2</h3>
+      <p>เพิ่มรายละเอียดผลงานของฉันที่นี่</p> หัวหน้าชุมนุม
+    </div>
+
+    <div class="card projects">
+      <img src="project3.jpg" alt="ผลงานที่ 3">
+      <h3>ผลงานที่ 3</h3>
+      <p>เพิ่มรายละเอียดผลงานของฉันที่นี่</p> พี่สตาฟ
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" style="background:#f9f5ff;">
+  <h2 class="section-title">🏆 CERTIFICATES</h2>
+  <div class="card-container">
+    <div class="card certificate">
+      <img src="certificate1.jpg" alt="เกียรติบัตร">
+      <h3>เกียรติบัตรที่ 1</h3>
+      <p>เพิ่มชื่อกิจกรรมและวันที่</p> ปลูกป่าชายเลน
+    </div>
+
+  
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2 class="section-title">💌 CONTACT ME</h2>
+  <p>ขอบคุณที่เข้ามาเยี่ยมชม Portfolio ของฉัน</p>
+  <p>🌷 น.ส.มลฑาทิพย์ เชื้อพุทธ</p>
+  <p>📧 อีเมล: เพิ่มอีเมลของคุณ</p> :ajt210805.01@gmail.com
+  <p>📱 Instagram: เพิ่มลิงก์ Instagram</p> montatip.chuerput
+</section>
+
+<footer>
+  © 2026 MY PORTFOLIO | Designed with 💜
+  <br>
+  มลฑาทิพย์ เชื้อพุทธ
+</footer>
+
+</body>
+</html>
