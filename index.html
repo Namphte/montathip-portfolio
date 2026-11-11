@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio | มลฑาทิพย์</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(circle at 10% 5%, #16477c 0%, transparent 35%),
+    radial-gradient(circle at 90% 50%, #102d54 0%, transparent 40%),
+    linear-gradient(145deg, #02040a, #07172b, #03060e);
+  min-height: 100vh;
+  padding: 20px 15px;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 40px 10px 25px;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  letter-spacing: 5px;
+  color: #d9ecff;
+  text-shadow: 0 0 25px #368cff;
+}
+
+header p {
+  color: #9db9d9;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 20px 0 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #dceaff;
+  font-size: 12px;
+  padding: 9px 14px;
+  border: 1px solid #477dbb70;
+  border-radius: 30px;
+  background: #10233b;
+  transition: .3s;
+}
+
+nav a:hover {
+  background: #2165a5;
+  box-shadow: 0 0 18px #258cff;
+}
+
+/* GLASS CARD */
+.glass {
+  background: linear-gradient(
+    135deg,
+    #193b5cbd,
+    #091525e8,
+    #10243abb
+  );
+  border: 1px solid #5b8fc577;
+  border-radius: 25px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 12px 35px #00000070;
+  padding: 25px;
+  margin-bottom: 22px;
+}
+
+/* PROFILE */
+.profile {
+  text-align: center;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.profile img {
+  width: 190px;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  border: 2px solid #6db5ff;
+  box-shadow: 0 0 25px #258cff80;
+  margin-bottom: 20px;
+}
+
+.profile h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 45px;
+  color: #d9ecff;
+  text-shadow: 0 0 20px #3b8cff;
+}
+
+.profile h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.profile p {
+  color: #a9c2df;
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 25px;
+  border-top: 1px solid #709acb55;
+  padding-top: 20px;
+}
+
+.stat {
+  border-right: 1px solid #709acb55;
+}
+
+.stat:last-child {
+  border: none;
+}
+
+.stat strong {
+  display: block;
+  font-size: 23px;
+  color: #79baff;
+}
+
+.stat span {
+  font-size: 11px;
+  color: #b4c8df;
+}
+
+/* SECTION */
+.section-title {
+  color: #a9d3ff;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border-left: 4px solid #368cff;
+  padding-left: 13px;
+  text-shadow: 0 0 12px #368cff55;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid #7197c533;
+  font-size: 14px;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row span:first-child {
+  color: #9bb6d5;
+  min-width: 110px;
+}
+
+.info-row span:last-child {
+  text-align: right;
+}
+
+/* EDUCATION */
+.education-item {
+  border-left: 2px solid #368cff;
+  padding: 5px 0 20px 18px;
+  margin-left: 8px;
+}
+
+.education-item h3 {
+  font-size: 16px;
+  color: #b8d9ff;
+  font-weight: 500;
+}
+
+.education-item p {
+  font-size: 14px;
+  color: #b5c6d9;
+  margin-top: 5px;
+}
+
+/* INSPIRATION */
+.quote {
+  font-size: 16px;
+  line-height: 2;
+  text-align: center;
+  color: #dceaff;
+  padding: 10px;
+}
+
+.quote strong {
+  display: block;
+  color: #76baff;
+  margin-top: 15px;
+}
+
+/* WORKS AND HOBBIES */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.work-card {
+  background: linear-gradient(135deg, #17395b99, #07101f);
+  border: 1px solid #4d82bb70;
+  border-radius: 18px;
+  padding: 20px 12px;
+  text-align: center;
+  transition: .3s;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #287dce55;
+}
+
+.emoji {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.work-card h3 {
+  color: #b9d9ff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.work-card p {
+  font-size: 12px;
+  color: #a9bbd0;
+  margin-top: 6px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 12px;
+  color: #91a9c5;
+  line-height: 2;
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 37px;
+  }
+
+  .glass {
+    padding: 20px;
+  }
+
+  .profile img {
+    width: 170px;
+    height: 210px;
+  }
+
+  .info-row {
+    font-size: 13px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<header>
+  <h1>PORTFOLIO</h1>
+  <p>MY PROFILE • MY JOURNEY • MY DREAM</p>
+</header>
+
+<!-- MENU -->
+<nav>
+  <a href="#profile">หน้าหลัก</a>
+  <a href="#personal">ข้อมูลส่วนตัว</a>
+  <a href="#gpa">เกรดเฉลี่ย</a>
+  <a href="#education">การศึกษา</a>
+  <a href="#inspiration">แรงบันดาลใจ</a>
+  <a href="#works">ผลงาน</a>
+  <a href="#hobby">งานอดิเรก</a>
+</nav>
+
+<!-- PROFILE -->
+<section class="glass profile" id="profile">
+
+  <!-- เปลี่ยน profile.jpg เป็นชื่อรูปของตัวเอง -->
+  <img src="profile.jpg" alt="รูปโปรไฟล์">
+
+  <h2>My Profile</h2>
+
+  <h3>นางสาวมลฑาทิพย์ เชื้อพุทธ</h3>
+
+  <p>นักเรียนระดับมัธยมศึกษาตอนปลาย</p>
+  <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+
+  <div class="stats">
+
+    <div class="stat">
+      <strong>กรอก GPA</strong> 
+      <span>3.36เกรดเฉลี่ยสะสม</span> 
+    </div>
+
+    <div class="stat">
+      <strong>-ผลงาน-</strong>
+      <span> 1 ผลงาน</span>
+    </div>
+
+    <div class="stat">
+      <strong>-เกียรติบัตร-</strong>
+      <span>1 เกียรติบัตร</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PERSONAL -->
+<section class="glass" id="personal">
+
+  <h2 class="section-title">01 | ข้อมูลส่วนตัว</h2>
+
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล</span>
+    <span>มลฑาทิพย์ เชื้อพุทธ</span>
+  </div>
+
+  <div class="info-row">
+    <span>ชื่อเล่น</span>
+    <span>น้ำเพชร</span>
+  </div>
+
+  <div class="info-row">
+    <span>วันเกิด</span> 
+    <span> 29/มกราคม/2552 </span>
+  </div>
+
+  <div class="info-row">
+    <span>อายุ</span>
+    <span>18</span>
+  </div>
+
+  <div class="info-row">
+    <span>สัญชาติ</span>
+    <span>ไทย</span>
+  </div>
+
+  <div class="info-row">
+    <span>ความสามารถ</span>
+    <span>   - ศึกษาได้ไว  
+                    - พร้อมที่จะเรียนรู้ 
+                    - มีความเป็นผู้นำสูง           </span>
+
+  </div>
+
+</section>
+
+<!-- GPA -->
+<section class="glass" id="gpa">
+
+  <h2 class="section-title">02 | เกรดเฉลี่ย</h2>
+
+  <div class="info-row">
+    <span>เกรดเฉลี่ยสะสม</span>
+    <span> 3.36 </span>
+  </div>
+
+  <div class="info-row">
+    <span>ระดับชั้น</span>
+    <span>มัธยมศึกษาตอนปลาย</span>
+  </div>
+
+  <div class="info-row">
+    <span>แผนการเรียน</span>
+    <span> ศิปล์ ภาษาจีน     </span>
+  </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section class="glass" id="education">
+
+  <h2 class="section-title">03 | ประวัติการศึกษา</h2>
+
+  <div class="education-item">
+    <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+    <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+    <p>พ.ศ. 2567- ปัจจุบัน</p>
+  </div>
+
+  <div class="education-item">
+    <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+    <p>โรงเรียน วัดประดิษฐาราม </p>
+    <p>พ.ศ. 2564 - 2566_</p>
+  </div>
+
+  <div class="education-item">
+    <h3>ระดับประถมศึกษา</h3>
+    <p>โรงเรียน วิทยานุเคราะห์ </p>
+    <p>พ.ศ. 2557 - 2563</p>
+  </div>
+
+</section>
+
+<!-- INSPIRATION -->
+<section class="glass" id="inspiration">
+
+  <h2 class="section-title">04 | แรงบันดาลใจ</h2>
+
+  <div class="quote">
+
+    "ฉันเชื่อว่าทุกความสำเร็จเริ่มต้นจากความพยายาม
+    และความกล้าที่จะลงมือทำ แม้ระหว่างทางจะมีอุปสรรค
+    แต่ฉันจะไม่หยุดพัฒนาตัวเอง
+    เพราะความฝันของฉันมีค่ามากพอที่จะพยายาม"
+
+    <strong>MY DREAM, MY FUTURE</strong>
+
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="glass" id="works">
+
+  <h2 class="section-title">05 | ผลงานและกิจกรรม</h2>
+
+  <div class="work-grid">
+
+    <div class="work-card">
+      <div class="emoji">🏆</div>
+      <h3>ผลงานและรางวัล</h3>
+      <p> ประกวดกาดร์คริสมาส </p> 
+    </div>
+
+    <div class="work-card">
+      <div class="emoji">📜</div>
+      <h3>เกียรติบัตร</h3>
+      <p> เกียรติบัตรปลูกป่าชาย </p> 
+ 
+    </div>
+
+    <div class="work-card">
+      <div class="emoji">🎓</div>
+      <h3>กิจกรรมโรงเรียน</h3>
+      <p>   เป็นพี่สตาฟกีฬา เป็นประธานชุมนุม เป็นหัวหน้าฝ่ายทำเเสตนเชียร์ </p>
+    </div>
+
+    <div class="work-card">
+      <div class="emoji">🌟</div>
+      <h3>ความสามารถพิเศษ</h3>
+      <p> - มีความเป็นผู้นำ - ศึกษาได้ไว   </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOBBY -->
+<section class="glass" id="hobby">
+
+  <h2 class="section-title">06 | งานอดิเรก</h2>
+
+  <div class="work-grid">
+
+    <div class="work-card">
+      <div class="emoji">📚</div>
+      <h3>อ่านหนังสือ</h3>
+      <p>เรียนรู้สิ่งใหม่ ๆ</p>
+    </div>
+
+    <div class="work-card">
+      <div class="emoji">🎧</div>
+      <h3>ฟังเพลง</h3>
+      <p>ผ่อนคลายและสร้างแรงบันดาลใจ</p>
+    </div>
+
+    <div class="work-card">
+      <div class="emoji">📸</div>
+      <h3>ถ่ายภาพ</h3>
+      <p>เก็บภาพความทรงจำ</p>
+    </div>
+
+    <div class="work-card">
+      <div class="emoji">💻</div>
+      <h3>เทคโนโลยี</h3>
+      <p>เรียนรู้และสร้างสรรค์สิ่งใหม่</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>THANK YOU FOR VISITING MY PORTFOLIO</p>
+  <p>© 2026 MONTATHIP CHUEPHUT</p>
+  <p>♡ NEVER STOP DREAMING ♡</p>
+</footer>
+
+</div>
+</body>
+</html>
